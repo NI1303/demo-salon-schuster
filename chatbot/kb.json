@@ -1,0 +1,437 @@
+{
+ "version": 1,
+ "site": "salon-schuster",
+ "title": "Salon Schuster",
+ "assistantName": "Demo-Assistent",
+ "launcherLabel": "Fragen?",
+ "avatar": "img/favicon.svg",
+ "placeholder": "z. B. Wann habt ihr offen?",
+ "demoNote": "Demo-Assistent · antwortet nur mit belegten Angaben · sendet nichts",
+ "theme": {
+  "accent": "#3a2a23",
+  "accent-d": "#271c18",
+  "ink": "#2b201b",
+  "paper": "#f8f1e9",
+  "gold": "#c9a27a",
+  "font": "'Outfit', system-ui, sans-serif",
+  "serif": "'DM Serif', Georgia, serif"
+ },
+ "greeting": "Grüß Gott im Salon Schuster! Ich beantworte gern Fragen zu Öffnungszeiten, Termin und Anfahrt zum Rathaus. Für einen Termin am schnellsten: 08381 1405.",
+ "chips": [
+  {
+   "label": "Öffnungszeiten"
+  },
+  {
+   "label": "Termin"
+  },
+  {
+   "label": "Wo finde ich euch?"
+  },
+  {
+   "label": "Leistungen"
+  }
+ ],
+ "stopwords": [
+  "haben",
+  "habt",
+  "gibt",
+  "gibts",
+  "ihre",
+  "euch",
+  "eure",
+  "eine",
+  "einen",
+  "auch",
+  "kann",
+  "koennen",
+  "welche",
+  "bitte",
+  "danke",
+  "hallo",
+  "noch",
+  "sind",
+  "seid",
+  "mich",
+  "uns",
+  "ihnen",
+  "moechte",
+  "gerne",
+  "fuer",
+  "mein",
+  "meine",
+  "ich",
+  "wir",
+  "ihr"
+ ],
+ "intents": [
+  {
+   "id": "greet",
+   "weight": 1,
+   "keywords": [
+    "hallo",
+    "servus",
+    "gruess gott",
+    "guten tag",
+    "moin",
+    "hi"
+   ],
+   "answer": "Grüß Gott! Wie kann ich helfen?",
+   "links": [
+    {
+     "label": "08381 1405 anrufen",
+     "href": "tel:+4983811405"
+    }
+   ],
+   "chips": [
+    {
+     "label": "Öffnungszeiten"
+    },
+    {
+     "label": "Termin"
+    },
+    {
+     "label": "Wo finde ich euch?"
+    },
+    {
+     "label": "Leistungen"
+    }
+   ]
+  },
+  {
+   "id": "thanks",
+   "weight": 1,
+   "keywords": [
+    "danke",
+    "vielen dank",
+    "super",
+    "perfekt"
+   ],
+   "answer": "Sehr gern – bis bald am Rathaus!",
+   "links": [
+    {
+     "label": "08381 1405 anrufen",
+     "href": "tel:+4983811405"
+    }
+   ],
+   "chips": [
+    {
+     "label": "Öffnungszeiten"
+    },
+    {
+     "label": "Termin"
+    },
+    {
+     "label": "Wo finde ich euch?"
+    },
+    {
+     "label": "Leistungen"
+    }
+   ]
+  },
+  {
+   "id": "hours",
+   "weight": 3,
+   "keywords": [
+    "oeffnungszeiten",
+    "geoeffnet",
+    "offen",
+    "wann",
+    "auf",
+    "zeiten",
+    "montag",
+    "dienstag",
+    "mittwoch",
+    "donnerstag",
+    "freitag",
+    "samstag",
+    "sonntag",
+    "mittag",
+    "mittagspause",
+    "heute",
+    "morgen",
+    "uhr"
+   ],
+   "answer": "**Öffnungszeiten**\n- Di–Fr: 8:30–13:00 und 14:00–18:00 Uhr\n- Sa: 8:00–13:00 Uhr\n- Mo und So: geschlossen\n\nUrlaub und Feiertage stehen noch nicht auf der Seite – im Zweifel kurz anrufen.",
+   "links": [
+    {
+     "label": "Öffnungszeiten",
+     "href": "#zeiten"
+    },
+    {
+     "label": "08381 1405 anrufen",
+     "href": "tel:+4983811405"
+    }
+   ]
+  },
+  {
+   "id": "termin",
+   "weight": 3,
+   "keywords": [
+    "termin",
+    "termine",
+    "buchen",
+    "vereinbaren",
+    "reservieren",
+    "online",
+    "onlinebuchung",
+    "anmelden",
+    "kurzfristig",
+    "frei"
+   ],
+   "answer": "Termine vergibt der Salon am einfachsten **telefonisch: 08381 1405** (zu den Öffnungszeiten). Eine Online-Buchung gibt es bisher nicht – der Terminwunsch auf dieser Seite ist nur eine Demo.",
+   "links": [
+    {
+     "label": "08381 1405 anrufen",
+     "href": "tel:+4983811405"
+    },
+    {
+     "label": "Terminwunsch (Demo)",
+     "href": "#termin"
+    }
+   ]
+  },
+  {
+   "id": "leistungen",
+   "weight": 2,
+   "keywords": [
+    "leistung",
+    "leistungen",
+    "angebot",
+    "schnitt",
+    "haarschnitt",
+    "schneiden",
+    "herren",
+    "herrenschnitt",
+    "damen",
+    "farbe",
+    "faerben",
+    "faerbt",
+    "faerbst",
+    "toenen",
+    "toenung",
+    "colorieren",
+    "straehnen",
+    "blondieren",
+    "dauerwelle",
+    "hochsteck",
+    "braut",
+    "beratung",
+    "typberatung",
+    "bart"
+   ],
+   "answer": "Belegt ist aus Bewertungen: **Haarschnitt mit Beratung**, **Herrenhaarschnitt** und Typveränderung („Lust auf etwas Neues“). Weitere Leistungen wie Farbe, Strähnen oder Festfrisuren bitte direkt erfragen – die Liste ergänzt der Salon.",
+   "links": [
+    {
+     "label": "Zur Preisliste",
+     "href": "#leistungen"
+    },
+    {
+     "label": "08381 1405 anrufen",
+     "href": "tel:+4983811405"
+    }
+   ]
+  },
+  {
+   "id": "preise",
+   "weight": 4,
+   "keywords": [
+    "preis",
+    "preise",
+    "kostet",
+    "kosten",
+    "teuer",
+    "euro",
+    "preisliste"
+   ],
+   "answer": "Eine offizielle Preisliste liegt mir nicht vor – deshalb nenne ich keine Preise. Bitte direkt im Salon fragen: **08381 1405**.",
+   "links": [
+    {
+     "label": "08381 1405 anrufen",
+     "href": "tel:+4983811405"
+    },
+    {
+     "label": "Zur Preisliste",
+     "href": "#leistungen"
+    }
+   ]
+  },
+  {
+   "id": "address",
+   "weight": 3,
+   "keywords": [
+    "adresse",
+    "anfahrt",
+    "wo seid",
+    "wo sind",
+    "wo ist",
+    "wo liegt",
+    "wie komme",
+    "route",
+    "navi",
+    "finden",
+    "wo finde",
+    "finde ich",
+    "wo finden",
+    "standort",
+    "anschrift",
+    "rathaus",
+    "lindenberg",
+    "rathausstrasse"
+   ],
+   "answer": "**Salon Schuster**\nRathausstraße 2\n88161 Lindenberg im Allgäu\n\nDirekt am Rathaus.",
+   "links": [
+    {
+     "label": "Route (OpenStreetMap)",
+     "href": "https://www.openstreetmap.org/?mlat=47.601557&mlon=9.885638#map=18/47.601557/9.885638"
+    },
+    {
+     "label": "08381 1405 anrufen",
+     "href": "tel:+4983811405"
+    }
+   ],
+   "chips": [
+    {
+     "label": "Öffnungszeiten"
+    },
+    {
+     "label": "Termin"
+    },
+    {
+     "label": "Wo finde ich euch?"
+    },
+    {
+     "label": "Leistungen"
+    }
+   ]
+  },
+  {
+   "id": "parken",
+   "weight": 3,
+   "keywords": [
+    "parken",
+    "parkplatz",
+    "parkplaetze",
+    "auto"
+   ],
+   "answer": "Einen offiziellen Parkhinweis gibt es noch nicht – bitte im Salon nachfragen.",
+   "links": [
+    {
+     "label": "08381 1405 anrufen",
+     "href": "tel:+4983811405"
+    },
+    {
+     "label": "Route (OpenStreetMap)",
+     "href": "https://www.openstreetmap.org/?mlat=47.601557&mlon=9.885638#map=18/47.601557/9.885638"
+    }
+   ]
+  },
+  {
+   "id": "barriere",
+   "weight": 3,
+   "keywords": [
+    "barrierefrei",
+    "rollstuhl",
+    "rollator",
+    "kinderwagen",
+    "eingang",
+    "stufe",
+    "stufen"
+   ],
+   "answer": "Laut einem Branchenportal hat der Salon einen **rollstuhlgerechten Eingang** – bitte vorher kurz bestätigen lassen: 08381 1405.",
+   "links": [
+    {
+     "label": "08381 1405 anrufen",
+     "href": "tel:+4983811405"
+    }
+   ]
+  },
+  {
+   "id": "contact",
+   "weight": 2,
+   "keywords": [
+    "telefon",
+    "anrufen",
+    "nummer",
+    "erreichen",
+    "kontakt",
+    "email",
+    "e mail",
+    "mail",
+    "fax"
+   ],
+   "answer": "**Kontakt**\nTel.: 08381 1405\nFax: 08381 801763\nE-Mail laut Google-Eintrag: info@friseur-team-schuster.de (bitte bestätigen)",
+   "links": [
+    {
+     "label": "08381 1405 anrufen",
+     "href": "tel:+4983811405"
+    }
+   ]
+  },
+  {
+   "id": "bewertung",
+   "weight": 3,
+   "keywords": [
+    "bewertung",
+    "bewertungen",
+    "sterne",
+    "google",
+    "rezension",
+    "zufrieden",
+    "erfahrung"
+   ],
+   "answer": "Laut Google-Eintrag: **4,8 von 5 Sternen bei 208 Bewertungen** (Stand 16.11.2026). Gäste loben vor allem Beratung, Schnitt und das Team.",
+   "links": [
+    {
+     "label": "Zu den Stimmen",
+     "href": "#team"
+    }
+   ]
+  },
+  {
+   "id": "team",
+   "weight": 2,
+   "keywords": [
+    "team",
+    "mitarbeiter",
+    "friseurin",
+    "friseur",
+    "inhaber",
+    "inhaberin",
+    "chef",
+    "chefin",
+    "wer"
+   ],
+   "answer": "Das **Friseur-Team Schuster** stellt sich auf der neuen Seite bald selbst vor – Namen und Fotos ergänzt der Salon.",
+   "links": [
+    {
+     "label": "08381 1405 anrufen",
+     "href": "tel:+4983811405"
+    }
+   ]
+  }
+ ],
+ "menu": {
+  "foundPrefix": "",
+  "links": [],
+  "followChips": [],
+  "sections": []
+ },
+ "fallback": {
+  "text": "Das kann ich leider nicht sicher beantworten – ich kenne nur Öffnungszeiten, Anfahrt und Kontakt. Am besten kurz anrufen: **08381 1405**.",
+  "links": [
+   {
+    "label": "08381 1405 anrufen",
+    "href": "tel:+4983811405"
+   },
+   {
+    "label": "Öffnungszeiten",
+    "href": "#zeiten"
+   }
+  ]
+ },
+ "handoff": {
+  "tel": "+4983811405",
+  "telLabel": "08381 1405",
+  "text": "Lieber persönlich?"
+ }
+}
